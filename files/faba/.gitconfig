@@ -1,0 +1,14 @@
+[user] 
+	name = Fabian Sasse
+	email = fabian.sasse@fab-it.biz
+
+
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+	interactive = auto
+	ui = true
+	pager = true
+[log]
+	follow = true
