@@ -3,7 +3,7 @@
 users:
   - name: faba
     shell: zsh
-    sshkey: faba/.ssh/id_rsa.pub
+    sshkey: "https://github.com/Fabaderheld.keys"
     groups:
       - sudo
       - adm
