@@ -39,6 +39,6 @@
   - name: "Added ssh key"
     authorized_key:
       user: "{{ item.name }}"
-      key: "{{ lookup('file', '{{ item.sshkey }}') }}"
+      key: "{{ item.sshkey }}"
     become: yes
     loop: "{{ users }}"

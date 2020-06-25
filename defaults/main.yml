@@ -15,7 +15,7 @@ users:
 
   - name: root
     shell: bash
-    sshkey: faba/.ssh/id_rsa.pub
+    sshkey: "https://github.com/Fabaderheld.keys"
     groups:
       - root
     password: "$6$z5xPO9IoWgKJLawY$2YzdEf3htD6cC1XeI0TUKFrX1MnoGHt3Ux7p/wjYiGnC5W8MZLnVeOgokmkCY/HwkP5OjjNzYWMEh./Mzbn8I0"
