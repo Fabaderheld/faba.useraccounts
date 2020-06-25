@@ -2,15 +2,14 @@
 
 # tasks file for faba.useraccounts
 
-  - name: "Include Distro specific vars"
-    include_vars: "{{ inventory_dir }}/vars/distros/{{ ansible_lsb.id }}.yml"
-  - include_vars: "{{user_var_file}}"
+  # - name: "Include Distro specific vars"
+  #   include_vars: "{{ inventory_dir }}/vars/distros/{{ ansible_lsb.id }}.yml"
 
   - name: "Install required Shells"
     apt:
       package: "{{ item.shell }}"
       state: present
-    with_items: "{{ users }}"
+    loop: "{{ users }}"
 
   - name: "Install Sudo"
     apt:
@@ -42,13 +41,4 @@
       user: "{{ item.name }}"
       key: "{{ lookup('file', '{{ item.sshkey }}') }}"
     become: yes
-    with_items: "{{ users }}"
-
-  # - name: "Copy files"
-  #   copy:
-  #     src: "{{ item.name }}/"
-  #     dest: "/home/{{ item.name }}"
-  #     owner: "{{ item.name }}"
-  #     group: "{{ item.name }}"
-  #   with_items: "{{ users }}"
-  #   tags: copy_files
+    loop: "{{ users }}"
