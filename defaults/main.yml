@@ -1,2 +1,21 @@
 ---
 # defaults file for faba.useraccounts
+users:
+  - name: faba
+    shell: zsh
+    sshkey: faba/.ssh/id_rsa.pub
+    groups:
+      - sudo
+      - adm
+      - dip
+      - plugdev
+      - ssh
+      - davfs2
+    password: "$6$XF7KRmVh$tQXszGW7VlEutyXt/pfx8WUljjNru21m8YDAls8r2LMLj.Qcp2xo8LHlwrCrd0/OLlKy2Y7wvshLfVUk2L/Ho."
+
+  - name: root
+    shell: bash
+    sshkey: faba/.ssh/id_rsa.pub
+    groups:
+      - root
+    password: "$6$z5xPO9IoWgKJLawY$2YzdEf3htD6cC1XeI0TUKFrX1MnoGHt3Ux7p/wjYiGnC5W8MZLnVeOgokmkCY/HwkP5OjjNzYWMEh./Mzbn8I0"
