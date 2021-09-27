@@ -36,7 +36,7 @@
       - "{{ users }}"
       - groups
 
-  - name: "Added ssh key"
+  - name: "Add ssh key"
     authorized_key:
       user: "{{ item.name }}"
       key: "{{ item.sshkey }}"
